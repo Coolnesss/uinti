@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  poke_id: 1
+  title: MyString
+
+two:
+  poke_id: 1
+  title: MyString

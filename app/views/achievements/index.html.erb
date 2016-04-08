@@ -1,0 +1,28 @@
+
+
+<div class="col-md-8">
+<h1>Listing Achievements</h1>
+<ul class="demo-list-two mdl-list">
+  <% @achievements.each do |ach| %>
+
+  <li class="mdl-list__item mdl-list__item--two-line">
+    <span class="mdl-list__item-primary-content">
+      <% if ach.poke_name %>
+        <img class="material-icons mdl-list__item-avatar" src=<%= ach.picture_url %>>
+      <% else %>
+        <i class="material-icons mdl-list__item-avatar">cake</i>
+      <% end %>
+      <span><%= ach.title %></span>
+      <span class="mdl-list__item-sub-title"><%= ach %></span>
+    </span>
+    <span class="mdl-list__item-secondary-content">
+      <span class="mdl-list__item-secondary-info">Done?</span>
+      <a class="mdl-list__item-secondary-action" href=<%= achievement_path(ach)%>><i class="material-icons">done</i></a>
+    </span>
+  </li>
+  <% end %>
+</ul>
+<br>
+
+<%= link_to '<i class="material-icons">add</i>'.html_safe, new_achievement_path, class: "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" %>
+</div>
