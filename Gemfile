@@ -33,7 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'rest-client'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass'
 gem 'rest-client-components'
 gem 'material_design_lite-rails'
 gem 'momentjs-rails', '>= 2.9.0'
