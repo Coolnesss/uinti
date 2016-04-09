@@ -1,0 +1,34 @@
+/* line 1, /home/chang/uinti/app/assets/stylesheets/welcome.scss */
+body {
+  background-position: center center;
+  background-size: cover;
+  background-image: url(/assets/boat-4ee8c2ec0d3b7308ed493c90ea124e0ee7f58dec44e46aa3862a4312b64082f2.jpg);
+}
+
+/* line 8, /home/chang/uinti/app/assets/stylesheets/welcome.scss */
+.jumbotron {
+  background: #c83636;
+  /* This is for ie8 and below */
+  background: rgba(200, 54, 54, 0);
+  color: white;
+}
+
+/* line 15, /home/chang/uinti/app/assets/stylesheets/welcome.scss */
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: #00bcd4;
+  font-weight: 700;
+}
+
+/* line 22, /home/chang/uinti/app/assets/stylesheets/welcome.scss */
+.android-slogan {
+  font-size: 60px;
+  padding-top: 8%;
+}
+
+/* line 27, /home/chang/uinti/app/assets/stylesheets/welcome.scss */
+.android-sub-slogan {
+  font-size: 21px;
+  padding-top: 24px;
+}
