@@ -1,11 +1,26 @@
-<p>
-  <strong>Time:</strong>
-  <%= @event.time %>
-</p>
-
-<p>
+<h1>
   <strong>Place:</strong>
   <%= @event.place %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
+</h1>
+<h1>
+  <strong>Time:</strong>
+  <%= @event.time %>
+</h1>
+<% if @event.users.empty? %>
+<h3>Nobody is joining :(</h3>
+<% else %>
+  <h3>Joining the event are</h3>
+  <div class="col-md-6 col-md-offset-2">
+    <ul class="mdl-list">
+      <% @users.each do |user| %>
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-icon">person</i>
+            <%= user.username.capitalize %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+    <br>
+  </div>
+<% end %>

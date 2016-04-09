@@ -6,6 +6,10 @@ class Event < ActiveRecord::Base
 
   validate :time_cannot_be_in_the_past
 
+  def has_user?(user)
+    users.include? user
+  end
+
   def time_cannot_be_in_the_past
    if time.present? && time < Time.now
      errors.add(:time, "can't be in the past")

@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
+  get '/events/:id/join' => 'events#join', as: "join"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

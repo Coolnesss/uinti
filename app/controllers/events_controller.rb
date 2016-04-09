@@ -1,5 +1,17 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :join]
+  before_action :authorize, only: [:join]
+
+  # Joins current user to event
+  def join
+    byebug
+    if (not @event.users.include? current_user)
+      EventUser.create(user: current_user, event: @event)
+      redirect_to events_path, notice: "You are now participating."
+    else
+      redirect_to events_path, notice: "You are already in the event."
+    end
+  end
 
   # GET /events
   # GET /events.json
@@ -10,6 +22,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @users = @event.users
   end
 
   # GET /events/new

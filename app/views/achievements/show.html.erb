@@ -1,12 +1,14 @@
+
 <h1>
   <strong>Title:</strong>
   <%= @achievement.title %>
 </h1>
 
 <h2>
-  Pokemon: <%= @achievement.poke_name.capitalize %>
-  <img src=<%= @achievement.picture_url %>>
+  <% if @achievement.poke_name.present? %>
+    Pokemon: <%= @achievement.poke_name.capitalize %>
+    <img src=<%= @achievement.picture_url %>>
+  <% else %>
+    No pokemon
+  <% end %>
 </h2>
-
-<%= link_to 'Edit', edit_achievement_path(@achievement) %> |
-<%= link_to 'Back', achievements_path %>
