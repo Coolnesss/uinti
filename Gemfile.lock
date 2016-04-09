@@ -198,7 +198,7 @@ DEPENDENCIES
   rails_layout
   rest-client
   rest-client-components
-  sass-rails (~> 5.0)
+  sass-rails
   sdoc (~> 0.4.0)
   spring
   sqlite3
