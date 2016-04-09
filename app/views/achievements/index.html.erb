@@ -5,7 +5,7 @@
 
     <li class="mdl-list__item mdl-list__item--two-line">
       <span class="mdl-list__item-primary-content">
-        <% if ach.poke_name %>
+        <% if ach.poke_name.present? %>
           <img class="material-icons mdl-list__item-avatar" src=<%= ach.picture_url %>>
         <% else %>
           <i class="material-icons mdl-list__item-avatar">cake</i>
