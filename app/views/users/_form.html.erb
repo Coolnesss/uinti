@@ -10,12 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  Username: <%= f.text_field :username %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="col-md-3 col-md-offset-4">
+      <div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.label "Username", class: "mdl-textfield__label" %><br>
+        <%= f.text_field :username, class:"mdl-textfield__input" %>
+      </div>
+      <div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.label "Password", class: "mdl-textfield__label" %><br>
+        <%= f.password_field :password,  class:"mdl-textfield__input" %>
+      </div>
+      <div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.label "Confirm password", class: "mdl-textfield__label" %><br>
+        <%= f.password_field :password_confirmation, class:"mdl-textfield__input" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Register", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" %>
+      </div>
   </div>
+
 <% end %>

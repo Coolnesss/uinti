@@ -1,9 +1,17 @@
-<h1>Login</h1>
 
-<%= form_tag '/login' do %>
-
-  username: <%= text_field_tag :username %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-
+<div class="col-md-3 col-md-offset-4">
+  <%= form_tag '/login' do %>
+    <h1>Login</h1>
+    <div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= label_tag "Username", nil, class: "mdl-textfield__label" %><br>
+      <%= text_field_tag :username, nil, class:"mdl-textfield__input" %>
+    </div>
+    <div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= label_tag "Password", nil, class: "mdl-textfield__label" %><br>
+      <%= password_field_tag :password, nil, class:"mdl-textfield__input" %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Login", class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" %>
+    </div>
 <% end %>
+</div>

@@ -17,10 +17,14 @@ class Event < ActiveRecord::Base
   end
 
   def to_s
-    diff = time - Time.now
+    diff = time.in_time_zone("Helsinki") - Time.now
     return "Happening in less than an hour" if diff < 1.hour
     return "Happening in less than a day" if diff < 24.hours
-    return "Happening in #{time.days - Time.now}" if diff.abs < 30.days
+    return "Happening in #{time.in_time_zone("Helsinki").days - Time.now}" if diff.abs < 30.days
+  end
+
+  def formatted_time
+    time.in_time_zone("Helsinki").to_formatted_s(:long_ordinal)
   end
 
 

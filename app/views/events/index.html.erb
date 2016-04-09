@@ -13,7 +13,8 @@
           <% if event.time < Time.now %>
             Event was <%= distance_of_time_in_words(Time.now, event.time) %> ago
           <% else %>
-            Happening in <%= distance_of_time_in_words(Time.now, event.time) %>
+            Happening in <%= distance_of_time_in_words(Time.now, event.time) %>,
+            on <%= event.formatted_time %>
           <% end %>
           <br>
         </span>
