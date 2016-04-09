@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :event_users
+  resources :events
   resources :achievements
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.

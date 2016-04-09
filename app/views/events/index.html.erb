@@ -1,0 +1,29 @@
+<div class="col-md-8">
+  <h1>Listing Events <%= link_to '<i class="material-icons">add</i>'.html_safe, new_event_path, class: "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" %></h1>
+
+  <ul class="demo-list-two mdl-list">
+    <% @events.each do |event| %>
+
+    <li class="mdl-list__item mdl-list__item--two-line">
+      <span class="mdl-list__item-primary-content">
+          <i class="material-icons mdl-list__item-avatar">pool</i>
+        <span><%= event.place %></span>
+        <span class="mdl-list__item-sub-title">
+          <% if event.time < Time.now %>
+            Event was <%= distance_of_time_in_words(Time.now, event.time) %> ago
+          <% else %>
+            Happening in <%= distance_of_time_in_words(Time.now, event.time) %>
+          <% end %>
+        </span>
+      </span>
+      <span class="mdl-list__item-secondary-content">
+        <span class="mdl-list__item-secondary-info"></span>
+        <a class="mdl-list__item-secondary-action" href=<%= event_path(event)%>><i class="material-icons">directions_boat</i></a>
+      </span>
+    </li>
+    <% end %>
+  </ul>
+  <br>
+
+
+</div>

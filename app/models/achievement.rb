@@ -1,4 +1,5 @@
 class Achievement < ActiveRecord::Base
+  validates :title, presence: true
 
   def picture_url
     PokeApi.find_picture poke_name

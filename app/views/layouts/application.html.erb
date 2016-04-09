@@ -11,12 +11,37 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <div class="container mainpage">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Swim App</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <%= link_to "Achievements", achievements_path, class:"mdl-navigation__link" %>
+            <%= link_to "Events", events_path, class:"mdl-navigation__link" %>
+            <% if current_user %>
+              <%= link_to current_user.username.capitalize, current_user, class:"mdl-navigation__link" %>
+              <%= link_to "Logout", '/logout', class:"mdl-navigation__link" %>
+            <% else %>
+              <%= link_to 'Sign in', login_path, class:"mdl-navigation__link" %>
+              <%= link_to "Sign up", signup_path, class:"mdl-navigation__link" %>
+            <% end %>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Best</span>
+        <nav class="mdl-navigation">
+          <%= link_to "Achievements", achievements_path, class:"mdl-navigation__link" %>
+          <%= link_to "Events", events_path, class:"mdl-navigation__link" %>
+        </nav>
+      </div>
+    <main class="mdl-layout__content">
+    <div class="page-content container-fluid"><!-- Your content goes here -->
       <%= flash_messages %>
       <%= yield %>
-    </div><!-- /container -->
+    </div>
+    </main>
+  </div>
   </body>
 </html>

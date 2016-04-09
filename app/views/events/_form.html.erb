@@ -1,0 +1,39 @@
+
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+    <div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.label "Place", class: "mdl-textfield__label" %><br>
+      <%= f.text_field :place, class:"mdl-textfield__input" %>
+    </div>
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker1'>
+                <input type='datetime' class="form-control", name="event[time]",id="event_time", data-provide="datepicker" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+
+  <div class="actions">
+    <%= f.submit class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" %>
+  </div>
+<% end %>
