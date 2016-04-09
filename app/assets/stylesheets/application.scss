@@ -6,3 +6,24 @@
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
+
+a.mdl-navigation__link {
+  color: #eee;
+  font-weight: 700;
+  font-size: 14px;
+}
+a.mdl-navigation__link:hover {
+  color: rgb(255, 87, 34);
+}
+
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('../assets/stockphoto.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}

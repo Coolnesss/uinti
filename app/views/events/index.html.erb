@@ -7,7 +7,7 @@
     <li class="mdl-list__item mdl-list__item--two-line">
       <span class="mdl-list__item-primary-content">
           <i class="material-icons mdl-list__item-avatar">pool</i>
-        <span><%= link_to event.place, event %><div class="material-icons mdl-badge mdl-badge--overlap" data-badge=<%= event.users.count%>>people</div></span>
+        <span><%= link_to event.place, event %> <div class="material-icons mdl-badge mdl-badge--overlap" data-badge=<%= event.users.count%>>people</div></span>
 
         <span class="mdl-list__item-sub-title">
           <% if event.time < Time.now %>

@@ -2,11 +2,29 @@ body {
   background-position: center center;
   background-size: cover;
   background: {
-    image: asset-url("stockphoto.jpg");
+    image: asset-url("boat.jpg");
   }
 }
 .jumbotron {
    background: rgb(200, 54, 54); /* This is for ie8 and below */
    background: rgba(200, 54, 54, 0);
    color: white;
+}
+
+
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: rgb(0, 188, 212);
+  font-weight: 700;
+}
+
+.android-slogan {
+  font-size: 60px;
+  padding-top: 8%;
+}
+
+.android-sub-slogan {
+  font-size: 21px;
+  padding-top: 24px;
 }
