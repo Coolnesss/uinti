@@ -10,7 +10,7 @@ class PokeApi
 
   def self.find_picture(name)
     response = find(name)
-    response["sprites"]["front_default"]
+    response["sprites"]["front_default"] if response
   end
 
   def self.all
