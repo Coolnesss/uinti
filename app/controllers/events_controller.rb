@@ -4,7 +4,6 @@ class EventsController < ApplicationController
 
   # Joins current user to event
   def join
-    byebug
     if (not @event.users.include? current_user)
       EventUser.create(user: current_user, event: @event)
       redirect_to events_path, notice: "You are now participating."
