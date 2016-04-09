@@ -1,14 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-8">
+  <h1><%=@user%>'s events</h1>
+  <ul class="mdl-list">
+    <% @events.each do |event| %>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+    <li class="mdl-list__item mdl-list__item--two-line">
+      <span class="mdl-list__item-primary-content">
+          <i class="material-icons mdl-list__item-avatar">pool</i>
+        <span><%= link_to event.place, event %><div class="material-icons mdl-badge mdl-badge--overlap" data-badge=<%= event.users.count%>>people</div></span>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
+        <span class="mdl-list__item-sub-title">
+          <% if event.time < Time.now %>
+            Event was <%= distance_of_time_in_words(Time.now, event.time) %> ago
+          <% else %>
+            Happening in <%= distance_of_time_in_words(Time.now, event.time) %>
+          <% end %>
+          <br>
+        </span>
+      </span>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+      <span class="mdl-list__item-secondary-content">
+          <span class="mdl-list__item-secondary-info"></span>
+          <a class="mdl-list__item-secondary-action" href=#><i class="material-icons">event_available</i></a>
+      </span>
+    </li>
+    <% end %>
+  </ul>
+
+  <br>
+</div>

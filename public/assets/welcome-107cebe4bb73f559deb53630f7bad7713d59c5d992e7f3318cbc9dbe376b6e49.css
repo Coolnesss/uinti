@@ -1,0 +1,14 @@
+/* line 1, /home/chang/uinti/app/assets/stylesheets/welcome.scss */
+body {
+  background-position: center center;
+  background-size: cover;
+  background-image: url(/assets/stockphoto-a414d1ac6b56bedbf2b443520462de1283ba8fecb720464969c308019436f3a0.jpg);
+}
+
+/* line 8, /home/chang/uinti/app/assets/stylesheets/welcome.scss */
+.jumbotron {
+  background: #c83636;
+  /* This is for ie8 and below */
+  background: rgba(200, 54, 54, 0);
+  color: white;
+}

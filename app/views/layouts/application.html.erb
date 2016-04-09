@@ -5,6 +5,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Uinti" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Uinti" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag "welcome" if controller_name == "welcome" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script src="//storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
@@ -17,6 +18,7 @@
           <span class="mdl-layout-title">Swim App</span>
           <div class="mdl-layout-spacer"></div>
           <nav class="mdl-navigation">
+            <%= link_to 'Home', root_path, class:"mdl-navigation__link"  %>
             <%= link_to "Achievements", achievements_path, class:"mdl-navigation__link" %>
             <%= link_to "Events", events_path, class:"mdl-navigation__link" %>
             <% if current_user %>
@@ -32,8 +34,16 @@
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Best</span>
         <nav class="mdl-navigation">
+          <%= link_to 'Home', root_path, class:"mdl-navigation__link"  %>
           <%= link_to "Achievements", achievements_path, class:"mdl-navigation__link" %>
           <%= link_to "Events", events_path, class:"mdl-navigation__link" %>
+          <% if current_user %>
+            <%= link_to current_user.username.capitalize, current_user, class:"mdl-navigation__link" %>
+            <%= link_to "Logout", '/logout', class:"mdl-navigation__link" %>
+          <% else %>
+            <%= link_to 'Sign in', login_path, class:"mdl-navigation__link" %>
+            <%= link_to "Sign up", signup_path, class:"mdl-navigation__link" %>
+          <% end %>
         </nav>
       </div>
     <main class="mdl-layout__content">
