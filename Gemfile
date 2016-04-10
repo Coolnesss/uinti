@@ -39,6 +39,8 @@ gem 'rest-client-components'
 gem 'material_design_lite-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+gem 'dalli'
+gem 'memcachier'
 
 group :production do
    gem 'pg'
