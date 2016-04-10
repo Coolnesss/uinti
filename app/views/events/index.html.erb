@@ -23,7 +23,7 @@
       <span class="mdl-list__item-secondary-content">
         <% if current_user and event.has_user? current_user %>
           <span class="mdl-list__item-secondary-info"></span>
-          <a class="mdl-list__item-secondary-action" href=#><i class="material-icons">event_available</i></a>
+          <a class="mdl-list__item-secondary-action" href=<%= join_path(event)%>><i class="material-icons">event_available</i></a>
         <% elsif current_user %>
           <span class="mdl-list__item-secondary-info"></span>
           <a class="mdl-list__item-secondary-action" href=<%= join_path(event)%>><i class="material-icons">directions_boat</i></a>

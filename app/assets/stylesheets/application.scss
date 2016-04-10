@@ -16,14 +16,22 @@ a.mdl-navigation__link:hover {
   color: rgb(255, 87, 34);
 }
 
-.demo-card-wide.mdl-card {
-  width: 512px;
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
 }
-.demo-card-wide > .mdl-card__title {
+.demo-card-square > .mdl-card__title {
   color: #fff;
-  height: 176px;
-  background: url('../assets/stockphoto.jpg') center / cover;
+  background-position: center center;
+  background-size: cover;
+  background: {
+    image: asset-url("stockphoto.jpg");
+  }
 }
-.demo-card-wide > .mdl-card__menu {
-  color: #fff;
+.readable {
+  font-size: 14px;
+}
+
+.card {
+  margin-top: 5%;
 }

@@ -17,7 +17,7 @@
       <span class="mdl-list__item-secondary-content">
         <% if current_user and ach.completed_by? current_user %>
           <span class="mdl-list__item-secondary-info"></span>
-          <a class="mdl-list__item-secondary-action" href=<%= achievement_path(ach)%>><i class="material-icons">check_box</i></a>
+          <a class="mdl-list__item-secondary-action" href=<%= complete_path(ach)%>><i class="material-icons">check_box</i></a>
         <% elsif current_user %>
           <span class="mdl-list__item-secondary-info"></span>
           <a class="mdl-list__item-secondary-action" href=<%= complete_path(ach)%>><i class="material-icons">check_box_outline_blank</i></a>
@@ -28,3 +28,20 @@
   </ul>
   <br>
 </div>
+<% if current_user %>
+  <div class="col-md-4 card">
+    <div class="demo-card-square mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">Update</h2>
+      </div>
+      <div class="mdl-card__supporting-text readable">
+        Did you know that you can uncheck achievements here and on your profile page?
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=<%= user_path(current_user) %>>
+          View profile
+        </a>
+      </div>
+    </div>
+  </div>
+  <% end %>

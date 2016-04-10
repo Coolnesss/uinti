@@ -4,10 +4,12 @@ class AchievementsController < ApplicationController
 
   def complete
     unless @achievement.users.include? current_user
-      UserAchievement.create(user: current_user, achievement: @achievement)
+      UserAchievement.create user: current_user, achievement: @achievement
       redirect_to achievements_path, notice: "Well done!"
     else
-      redirect_to achievements_path, notice: "You've already completed it!"
+      ua = UserAchievement.find_by user: current_user, achievement: @achievement
+      ua.destroy
+      redirect_to achievements_path, notice: "Too bad..."
     end
   end
 

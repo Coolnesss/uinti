@@ -8,7 +8,9 @@ class EventsController < ApplicationController
       EventUser.create(user: current_user, event: @event)
       redirect_to events_path, notice: "You are now participating."
     else
-      redirect_to events_path, notice: "You are already in the event."
+      ev = EventUser.find_by user: current_user, event: @event
+      ev.destroy
+      redirect_to events_path, notice: "Removed you from the event."
     end
   end
 
