@@ -10,7 +10,7 @@
         <% else %>
           <i class="material-icons mdl-list__item-avatar">cake</i>
         <% end %>
-        <span><%= ach.title %></span>
+        <span><%= link_to ach.title, ach %> <div class="material-icons mdl-badge mdl-badge--overlap" data-badge=<%= ach.users.count%>>people</div></span>
         <span class="mdl-list__item-sub-title"><%= ach %></span>
       </span>
 

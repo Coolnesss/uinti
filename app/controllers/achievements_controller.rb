@@ -20,6 +20,7 @@ class AchievementsController < ApplicationController
   # GET /achievements/1
   # GET /achievements/1.json
   def show
+    @users = @achievement.users
   end
 
   # GET /achievements/new

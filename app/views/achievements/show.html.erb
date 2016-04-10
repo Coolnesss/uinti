@@ -12,3 +12,16 @@
     No pokemon
   <% end %>
 </h2>
+<h1>Completed by</h1>
+<div class="col-md-6 col-md-offset-3">
+<ul class="mdl-list">
+  <% @users.each do |user| %>
+    <li class="mdl-list__item">
+      <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon">person</i>
+        <%= link_to user, user %>
+      </span>
+    </li>
+  <% end %>
+</ul>
+</div>
