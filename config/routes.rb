@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
 
   get '/events/:id/join' => 'events#join', as: "join"
+  get '/achievements/:id/complete' => 'achievements#complete', as: "complete"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

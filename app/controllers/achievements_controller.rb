@@ -1,5 +1,15 @@
 class AchievementsController < ApplicationController
-  before_action :set_achievement, only: [:show, :edit, :update, :destroy]
+  before_action :set_achievement, only: [:show, :edit, :update, :destroy, :complete]
+  before_action :authorize, only: [:complete]
+
+  def complete
+    unless @achievement.users.include? current_user
+      UserAchievement.create(user: current_user, achievement: @achievement)
+      redirect_to achievements_path, notice: "Well done!"
+    else
+      redirect_to achievements_path, notice: "You've already completed it!"
+    end
+  end
 
   # GET /achievements
   # GET /achievements.json
