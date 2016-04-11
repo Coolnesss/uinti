@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :correct, except: [:index, :show, :create, :new]
 
   # GET /users
   # GET /users.json

@@ -21,6 +21,9 @@
         <% elsif current_user %>
           <span class="mdl-list__item-secondary-info"></span>
           <a class="mdl-list__item-secondary-action" href=<%= complete_path(ach)%>><i class="material-icons">check_box_outline_blank</i></a>
+          <% if current_user.admin? %>
+            <a class="mdl-list__item-secondary-action" data-method="delete" href=<%= achievement_path(ach) %>><i class="material-icons">close</i></a>
+          <% end %>
         <% end %>
       </span>
     </li>

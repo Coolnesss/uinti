@@ -1,7 +1,7 @@
 class Achievement < ActiveRecord::Base
   validates :title, presence: true
 
-  has_many :user_achievements
+  has_many :user_achievements, dependent: :destroy
   has_many :users, through: :user_achievements
 
   def completed_by?(user)

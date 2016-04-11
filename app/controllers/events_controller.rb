@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy, :join]
-  before_action :authorize, only: [:join]
+  before_action :authorize, only: [:join, :create, :new]
+  before_action :correct, except: [:join, :index, :show, :create, :new]
 
   # Joins current user to event
   def join

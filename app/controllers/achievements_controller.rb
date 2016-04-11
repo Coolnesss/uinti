@@ -1,6 +1,7 @@
 class AchievementsController < ApplicationController
   before_action :set_achievement, only: [:show, :edit, :update, :destroy, :complete]
-  before_action :authorize, only: [:complete]
+  before_action :authorize, only: [:complete, :create, :new]
+  before_action :correct, except: [:complete, :index, :show, :create, :new]
 
   def complete
     unless @achievement.users.include? current_user

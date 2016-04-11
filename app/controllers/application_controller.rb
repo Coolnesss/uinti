@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
+  def correct
+    redirect_to '/login', notice: "You need to be admin to do this" unless current_user and current_user.admin?
+  end
+
 end
