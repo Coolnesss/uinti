@@ -24,7 +24,17 @@ class PokeApi
 
   def self.get_pokemon(name)
     # Fixing bug in RestClient(?)
-    String.new(RestClient.get(@url + "pokemon/#{name}"))
+    begin
+      String.new(RestClient.get(@url + "pokemon/#{name}"))
+    rescue
+      false
+    end
+  end
+
+  def self.validate_name(name)
+    url = @url + "pokemon/#{name}"
+    return false unless url =~ /\A#{URI::regexp(['http', 'https'])}\z/
+    get_pokemon name
   end
 
 end

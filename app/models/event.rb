@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
   has_many :users, through: :event_users
 
   validates :time, uniqueness: true
+  validates :place, presence: true
 
   validate :time_cannot_be_in_the_past
 
