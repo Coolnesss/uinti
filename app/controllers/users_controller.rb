@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @events = @user.events
+    @events = @user.events.order(:time)
     @achievements = @user.achievements
   end
 

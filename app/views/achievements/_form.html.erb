@@ -1,19 +1,19 @@
 <div class="col-md-3">
-<%= form_for(@achievement) do |f| %>
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <%= f.label "Describe the achievement briefly", class: "mdl-textfield__label" %><br>
-    <%= f.text_field :title, class:"mdl-textfield__input" %>
-  </div>
-  </div>
-  <div id="pokename" class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <%= f.label "Give the name of the pokemon.", class: "mdl-textfield__label" %><br>
-    <%= f.text_field :poke_name, class:"mdl-textfield__input", :pattern => "[A-Z,a-z]*" %>
-    <span class="mdl-textfield__error">Doesn't seem like a pokemon!</span>
-  </div>
-  <div class="actions">
-    <%= f.submit class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" %>
-  </div>
-<% end %>
+  <%= form_for(@achievement) do |f| %>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.label "Describe the achievement briefly", class: "mdl-textfield__label" %><br>
+      <%= f.text_field :title, class:"mdl-textfield__input" %>
+    </div>
+    </div>
+    <div id="pokename" class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.label "Give the name of the pokemon.", class: "mdl-textfield__label" %><br>
+      <%= f.text_field :poke_name, class:"mdl-textfield__input", :pattern => "[A-Z,a-z]*" %>
+      <span class="mdl-textfield__error">Doesn't seem like a pokemon!</span>
+    </div>
+    <div class="actions">
+      <%= f.submit class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" %>
+    </div>
+  <% end %>
 </div>
 
 <% if @achievement.errors.any? %>

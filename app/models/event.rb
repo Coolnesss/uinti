@@ -12,9 +12,11 @@ class Event < ActiveRecord::Base
   end
 
   def time_cannot_be_in_the_past
-   if time.present? && time < Time.now
-     errors.add(:time, "can't be in the past")
-   end
+    errors.add(:time, "can't be in the past") if in_past?
+  end
+
+  def in_past?
+    time.present? && time < Time.now
   end
 
   def to_s

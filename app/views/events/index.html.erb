@@ -25,8 +25,10 @@
           <span class="mdl-list__item-secondary-info"></span>
           <a class="mdl-list__item-secondary-action" href=<%= join_path(event)%>><i class="material-icons">event_available</i></a>
         <% elsif current_user %>
-          <span class="mdl-list__item-secondary-info"></span>
-          <a class="mdl-list__item-secondary-action" href=<%= join_path(event)%>><i class="material-icons">directions_boat</i></a>
+          <% if not event.in_past? %>
+            <span class="mdl-list__item-secondary-info"></span>
+            <a class="mdl-list__item-secondary-action" href=<%= join_path(event)%>><i class="material-icons">directions_boat</i></a>
+          <% end %>
           <% if current_user.admin? %>
             <a class="mdl-list__item-secondary-action" data-method="delete" href=<%= event_path(event)%>><i class="material-icons">event_busy</i></a>
           <% end %>
