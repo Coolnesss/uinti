@@ -1,7 +1,9 @@
 body {
   background-position: center center;
   background-size: cover;
+  background-color:rgba(0, 0, 0, 0.3);
   background: {
+    color: rgba(0, 0, 0, 0.3);
     image: asset-url("boat.jpg");
   }
 }
@@ -15,7 +17,7 @@ body {
 .logo-font {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   line-height: 1;
-  color: rgb(0, 188, 212);
+  color: white;
   font-weight: 700;
 }
 
