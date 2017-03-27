@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
     username.capitalize
   end
 
+  def self.rank_ordered
+    users = User.all.select {|u| u.rank != 0}
+    users.sort_by {|u| u.rank.split("_").reverse.join}
+  end
 
   def rank
     event_count = events_in_past_year

@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :correct, except: [:index, :show, :create, :new]
+  before_action :correct, except: [:index, :show, :create, :new, :best]
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+  end
+
+  def best
+    @users = User.rank_ordered
   end
 
   # GET /users/1
