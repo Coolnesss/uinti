@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   def self.rank_ordered
     users = User.all.select {|u| u.rank != 0}
-    users.sort_by {|u| u.rank.split("_").reverse.join}
+    users.sort_by {|u| u.rank.split("_").reverse.join}.reverse
   end
 
   def rank
